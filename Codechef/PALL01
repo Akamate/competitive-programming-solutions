@@ -1,27 +1,19 @@
 //Problem link : https://www.codechef.com/problems/PALL01
 
 #include <iostream>
+#include <algorithm>
+#include <string>
 using namespace std;
-void output(int a){
-    int rev=0;
-    int number=a;
-    while(a){
-        int rem =a%10;
-        rev = rev*10+rem;
-        a/=10;
-    }
-    if(rev==number)
-        cout<<"wins"<<endl;
-    else
-        cout<<"losses"<<endl;
-}
-
 int main(int argc, char** argv) {
-    int t,n;
+    int t;
     cin>>t;
     while(t--){
+        String n;
         cin>>n;
-        output(n);
+        n[strlen(n)-1]='\0';
+        if(strcmp(n,reverse(n.begin(),n.end()-1))==0)
+          count<<"wins"<<endl;
+        else cout<<"losses"<<endl;
        }
     
     return 0;
